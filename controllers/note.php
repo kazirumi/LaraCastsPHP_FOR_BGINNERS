@@ -7,16 +7,13 @@ $config =require('config.php');
 $db =new Database($config['database']);
 
 $note=$db->query('select * from notes where id= :id',[
-    ':id'=>$_GET['id']])
-    ->fetch();
-
-if (! $note){
-    abort();
-}
+    ':id'=>$_GET['id']])->findOrFail();
 //dd($note);
+//dd($note['user_id']==$currentUserID);
 
-if($note['user_id']!==$currentUserID){
-    abort(Response::FORBIDDEN);
-}
+//checking authorize data
+authorize($note['user_id']===$currentUserID);
+
+
 require('views/note.view.php');
 

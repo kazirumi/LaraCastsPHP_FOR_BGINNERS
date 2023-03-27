@@ -1,25 +1,29 @@
 <?php
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-$rootUrl='/LaracastsPhpForBeginers/index.php';
 
-$routes=[
-        '/LaracastsPhpForBeginers/'=>'controllers/index.php',
-        $rootUrl.'/about'=>'controllers/about.php',
-        $rootUrl.'/notes'=>'controllers/notes.php',
-        $rootUrl.'/note'=>'controllers/note.php',
-];
+
+
+$routes= require ('routes.php');
+
+function routeToController($uri,$routes){
+    if(array_key_exists($uri,$routes)){
+        require $routes[$uri];
+    }else{
+        abort();
+    }
+}
 
 function abort($code=404){
-http_response_code($code);
+    http_response_code($code);
 
-require 'views/'.$code.'.php';
+    require 'views/'.$code.'.php';
 
-die();
+    die();
 }
 
-if(array_key_exists($uri,$routes)){
-require $routes[$uri];
-}else{
-abort();
-}
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+routeToController($uri,$routes);
+
+
+
