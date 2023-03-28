@@ -6,7 +6,7 @@
         <p class="mb-7">
             <a class="text-blue-500 hover:underline" href="http://localhost/LaracastsPhpForBeginers/index.php/notes">Go Back To List</a>
         </p>
-        <p><?=  $note['body'] ?></p>
+        <p><?= htmlspecialchars($note['body'])  ?></p>
     </div>
 </main>
 <?php require ('partials/footer.php')?>
