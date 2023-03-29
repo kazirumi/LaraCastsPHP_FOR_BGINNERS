@@ -8,11 +8,11 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/LaracastsPhpForBeginers/" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/"? "bg-gray-900 text-white":"text-gray-300" ?>  rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                        <a href="/LaracastsPhpForBeginers/public/" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/public/"? "bg-gray-900 text-white":"text-gray-300" ?>  rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
 
-                        <a href="/LaracastsPhpForBeginers/index.php/about" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/index.php/about"?"bg-gray-900 text-white":"text-gray-300" ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                        <a href="/LaracastsPhpForBeginers/public/index.php/about" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/public/index.php/about"?"bg-gray-900 text-white":"text-gray-300" ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
 
-                        <a href="/LaracastsPhpForBeginers/index.php/notes" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/index.php/notes"?"bg-gray-900 text-white":"text-gray-300" ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+                        <a href="/LaracastsPhpForBeginers/public/index.php/notes" class="<?php echo $_SERVER['REQUEST_URI']==="/LaracastsPhpForBeginers/public/index.php/notes"?"bg-gray-900 text-white":"text-gray-300" ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
 
                         <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact Us</a>
 

@@ -1,15 +1,19 @@
 <?php
-require 'Validator.php';
+use core\Database;
+use core\Validator;
+
+require base_path('core/Validator.php');
 
 $heading="Notes Create";
-$config = require('config.php');
+$config = require base_path('config.php');
 $db =new Database($config['database']);
 
 //$validator=new Validator();
-
+$errors=[];
 if($_SERVER['REQUEST_METHOD']==='POST'){
-    $errors=[];
+
     //dd($validator->string($_POST['description'],1,1000));
+
     if(! Validator::string($_POST['description'],1,1000)){
         $errors['body']='A description is required and can not be greater than 1000';
     }
@@ -22,4 +26,4 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 }else{
     $_POST['description']='';
 }
-require 'views/notes/create.view.php';
+ view('notes/create.view.php',['heading'=>$heading,'errors'=>$errors]);

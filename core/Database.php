@@ -1,5 +1,7 @@
 <?php
 
+namespace core;
+use PDO;
 // connect data base MySQL and execute query
 class Database{
     public $connection;

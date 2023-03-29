@@ -1,12 +1,14 @@
 <?php
 //var_dump($_SERVER['REQUEST_URI']);
+use core\Database;
+
 $heading="My Notes";
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db =new Database($config['database']);
 
 $notes=$db->query('select * from notes where user_id=1')->getAll();
 
 //dd($notes);
-require('views/notes/index.view.php');
+ view('notes/index.view.php',['heading'=>$heading,'notes'=>$notes]);
 
